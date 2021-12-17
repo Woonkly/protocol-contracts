@@ -1,0 +1,875 @@
+{
+  "contractName": "ITransferExecutor",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "bytes4",
+                  "name": "assetClass",
+                  "type": "bytes4"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "internalType": "struct LibAsset.AssetType",
+              "name": "assetType",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct LibAsset.Asset",
+          "name": "asset",
+          "type": "tuple"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4",
+          "name": "transferDirection",
+          "type": "bytes4"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes4",
+          "name": "transferType",
+          "type": "bytes4"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"components\":[{\"components\":[{\"internalType\":\"bytes4\",\"name\":\"assetClass\",\"type\":\"bytes4\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct LibAsset.AssetType\",\"name\":\"assetType\",\"type\":\"tuple\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct LibAsset.Asset\",\"name\":\"asset\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes4\",\"name\":\"transferDirection\",\"type\":\"bytes4\"},{\"indexed\":false,\"internalType\":\"bytes4\",\"name\":\"transferType\",\"type\":\"bytes4\"}],\"name\":\"Transfer\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@rarible/exchange-v2/contracts/ITransferExecutor.sol\":\"ITransferExecutor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@rarible/exchange-v2/contracts/ITransferExecutor.sol\":{\"keccak256\":\"0x8644f44ae8898b21f4f5f375049ee4fe3ede4492c82f95566e0783756a40945c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://caaf9eac34af44b396775edcf49f437b2ae04e60b673f5ba21035912ac58c915\",\"dweb:/ipfs/QmY8reainoSg5BkJUTGsBmRrUCwmvsMa6umRHkvUpcTs2A\"]},\"@rarible/lib-asset/contracts/LibAsset.sol\":{\"keccak256\":\"0x5d63bba4747a12a83c5628dba94bf56714b4dcf94f742ff28863034831061c8a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9826768c7f5c5423d9bbf49be50bd21ed2db5374ee47648150e50aa10e3c0151\",\"dweb:/ipfs/Qmex4xCv4MFRfCxMNZzzsKXYAFxbYWQRFsbaHiJfDTozYG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.7.6;\npragma abicoder v2;\n\nimport \"@rarible/lib-asset/contracts/LibAsset.sol\";\n\nabstract contract ITransferExecutor {\n\n    //events\n    event Transfer(LibAsset.Asset asset, address from, address to, bytes4 transferDirection, bytes4 transferType);\n\n    function transfer(\n        LibAsset.Asset memory asset,\n        address from,\n        address to,\n        bytes4 transferDirection,\n        bytes4 transferType\n    ) internal virtual;\n\n}\n",
+  "sourcePath": "@rarible/exchange-v2/contracts/ITransferExecutor.sol",
+  "ast": {
+    "absolutePath": "@rarible/exchange-v2/contracts/ITransferExecutor.sol",
+    "exportedSymbols": {
+      "ITransferExecutor": [
+        4509
+      ],
+      "LibAsset": [
+        7355
+      ]
+    },
+    "id": 4510,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4481,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:36"
+      },
+      {
+        "id": 4482,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "56:19:36"
+      },
+      {
+        "absolutePath": "@rarible/lib-asset/contracts/LibAsset.sol",
+        "file": "@rarible/lib-asset/contracts/LibAsset.sol",
+        "id": 4483,
+        "nodeType": "ImportDirective",
+        "scope": 4510,
+        "sourceUnit": 7356,
+        "src": "77:51:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 4509,
+        "linearizedBaseContracts": [
+          4509
+        ],
+        "name": "ITransferExecutor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 4495,
+            "name": "Transfer",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4494,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4485,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4495,
+                  "src": "201:20:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Asset_$7312_memory_ptr",
+                    "typeString": "struct LibAsset.Asset"
+                  },
+                  "typeName": {
+                    "id": 4484,
+                    "name": "LibAsset.Asset",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 7312,
+                    "src": "201:14:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Asset_$7312_storage_ptr",
+                      "typeString": "struct LibAsset.Asset"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4487,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4495,
+                  "src": "223:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4486,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "223:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4489,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4495,
+                  "src": "237:10:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4488,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "237:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4491,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "transferDirection",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4495,
+                  "src": "249:24:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4490,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "249:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4493,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "transferType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4495,
+                  "src": "275:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4492,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "275:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "200:95:36"
+            },
+            "src": "186:110:36"
+          },
+          {
+            "id": 4508,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transfer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4506,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4497,
+                  "mutability": "mutable",
+                  "name": "asset",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4508,
+                  "src": "329:27:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Asset_$7312_memory_ptr",
+                    "typeString": "struct LibAsset.Asset"
+                  },
+                  "typeName": {
+                    "id": 4496,
+                    "name": "LibAsset.Asset",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 7312,
+                    "src": "329:14:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Asset_$7312_storage_ptr",
+                      "typeString": "struct LibAsset.Asset"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4499,
+                  "mutability": "mutable",
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4508,
+                  "src": "366:12:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4498,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "366:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4501,
+                  "mutability": "mutable",
+                  "name": "to",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4508,
+                  "src": "388:10:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4500,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:7:36",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4503,
+                  "mutability": "mutable",
+                  "name": "transferDirection",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4508,
+                  "src": "408:24:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4502,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "408:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4505,
+                  "mutability": "mutable",
+                  "name": "transferType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4508,
+                  "src": "442:19:36",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 4504,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "442:6:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "319:148:36"
+            },
+            "returnParameters": {
+              "id": 4507,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "484:0:36"
+            },
+            "scope": 4509,
+            "src": "302:183:36",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4510,
+        "src": "130:358:36"
+      }
+    ],
+    "src": "33:456:36"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@rarible/exchange-v2/contracts/ITransferExecutor.sol",
+      "exportedSymbols": {
+        "ITransferExecutor": [
+          4509
+        ],
+        "LibAsset": [
+          7355
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 4481,
+        "name": "PragmaDirective",
+        "src": "33:22:36"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 4482,
+        "name": "PragmaDirective",
+        "src": "56:19:36"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 7356,
+          "absolutePath": "@rarible/lib-asset/contracts/LibAsset.sol",
+          "file": "@rarible/lib-asset/contracts/LibAsset.sol",
+          "scope": 4510,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 4483,
+        "name": "ImportDirective",
+        "src": "77:51:36"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            4509
+          ],
+          "name": "ITransferExecutor",
+          "scope": 4510
+        },
+        "children": [
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Transfer"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "asset",
+                      "scope": 4495,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "struct LibAsset.Asset",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "LibAsset.Asset",
+                          "referencedDeclaration": 7312,
+                          "type": "struct LibAsset.Asset"
+                        },
+                        "id": 4484,
+                        "name": "UserDefinedTypeName",
+                        "src": "201:14:36"
+                      }
+                    ],
+                    "id": 4485,
+                    "name": "VariableDeclaration",
+                    "src": "201:20:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "scope": 4495,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4486,
+                        "name": "ElementaryTypeName",
+                        "src": "223:7:36"
+                      }
+                    ],
+                    "id": 4487,
+                    "name": "VariableDeclaration",
+                    "src": "223:12:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "scope": 4495,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4488,
+                        "name": "ElementaryTypeName",
+                        "src": "237:7:36"
+                      }
+                    ],
+                    "id": 4489,
+                    "name": "VariableDeclaration",
+                    "src": "237:10:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "transferDirection",
+                      "scope": 4495,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 4490,
+                        "name": "ElementaryTypeName",
+                        "src": "249:6:36"
+                      }
+                    ],
+                    "id": 4491,
+                    "name": "VariableDeclaration",
+                    "src": "249:24:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "transferType",
+                      "scope": 4495,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 4492,
+                        "name": "ElementaryTypeName",
+                        "src": "275:6:36"
+                      }
+                    ],
+                    "id": 4493,
+                    "name": "VariableDeclaration",
+                    "src": "275:19:36"
+                  }
+                ],
+                "id": 4494,
+                "name": "ParameterList",
+                "src": "200:95:36"
+              }
+            ],
+            "id": 4495,
+            "name": "EventDefinition",
+            "src": "186:110:36"
+          },
+          {
+            "attributes": {
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "transfer",
+              "scope": 4509,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "asset",
+                      "scope": 4508,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibAsset.Asset",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "LibAsset.Asset",
+                          "referencedDeclaration": 7312,
+                          "type": "struct LibAsset.Asset"
+                        },
+                        "id": 4496,
+                        "name": "UserDefinedTypeName",
+                        "src": "329:14:36"
+                      }
+                    ],
+                    "id": 4497,
+                    "name": "VariableDeclaration",
+                    "src": "329:27:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "from",
+                      "scope": 4508,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4498,
+                        "name": "ElementaryTypeName",
+                        "src": "366:7:36"
+                      }
+                    ],
+                    "id": 4499,
+                    "name": "VariableDeclaration",
+                    "src": "366:12:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "to",
+                      "scope": 4508,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4500,
+                        "name": "ElementaryTypeName",
+                        "src": "388:7:36"
+                      }
+                    ],
+                    "id": 4501,
+                    "name": "VariableDeclaration",
+                    "src": "388:10:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "transferDirection",
+                      "scope": 4508,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 4502,
+                        "name": "ElementaryTypeName",
+                        "src": "408:6:36"
+                      }
+                    ],
+                    "id": 4503,
+                    "name": "VariableDeclaration",
+                    "src": "408:24:36"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "transferType",
+                      "scope": 4508,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 4504,
+                        "name": "ElementaryTypeName",
+                        "src": "442:6:36"
+                      }
+                    ],
+                    "id": 4505,
+                    "name": "VariableDeclaration",
+                    "src": "442:19:36"
+                  }
+                ],
+                "id": 4506,
+                "name": "ParameterList",
+                "src": "319:148:36"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4507,
+                "name": "ParameterList",
+                "src": "484:0:36"
+              }
+            ],
+            "id": 4508,
+            "name": "FunctionDefinition",
+            "src": "302:183:36"
+          }
+        ],
+        "id": 4509,
+        "name": "ContractDefinition",
+        "src": "130:358:36"
+      }
+    ],
+    "id": 4510,
+    "name": "SourceUnit",
+    "src": "33:456:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-12-15T06:21:47.236Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
